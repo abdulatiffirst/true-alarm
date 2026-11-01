@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>True Alarm — карта проблем</title>
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    >
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header class="header">
+        <div>
+            <h1>True Alarm</h1>
+            <p>Карта городских проблем</p>
+        </div>
+
+        <button id="refresh-button">Обновить</button>
+    </header>
+
+    <main>
+        <section class="toolbar">
+            <label for="category-filter">Категория:</label>
+<select id="category-filter">
+                <option value="all">Все категории</option>
+                <option value="waste">Мусор</option>
+                <option value="infrastructure">Инфраструктура</option>
+            </select>
+
+            <span id="status">Загрузка карты...</span>
+        </section>
+
+        <div id="map"></div>
+        <div class="priority-legend">
+    <span class="legend-item">
+        <span class="legend-dot" style="background:#22a447"></span>
+        Низкий
+    </span>
+    <span class="legend-item">
+        <span class="legend-dot" style="background:#eab308"></span>
+        Умеренный
+    </span>
+    <span class="legend-item">
+        <span class="legend-dot" style="background:#f97316"></span>
+        Повышенный
+    </span>
+    <span class="legend-item">
+        <span class="legend-dot" style="background:#dc2626"></span>
+        Высокий
+    </span>
+</div>
+
+        <section class="results">
+            <h2>Проблемы в этой области</h2>
+            <div id="problem-list"></div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
